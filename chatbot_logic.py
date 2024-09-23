@@ -1,7 +1,6 @@
 
-import langchain
-import os
 
+# importing necessary libraries
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
@@ -15,13 +14,14 @@ def conversation_chain(userName, userGrade, userSubject, numberQuestion, difficu
         Args: NONE
         Returns : chain 
         """
-    # chatbot model of google 
+    # chatbot model of google genmini 
     model = ChatGoogleGenerativeAI(model="gemini-pro",
                              temperature=0.3)
-    # prompt template for the  gemini model 
+    # prompt template for the  gemini model with necessary input variable and prompt text 
     prompt = PromptTemplate(template = prompt_template, input_variables=["userName", "userGrade", "userSubject", "numberQuestion", "difficultyLevel"])
     # loading the gemini model and prompt to a single chain 
     chain = LLMChain(llm=model, prompt=prompt)
+    # Generating a respone by invoking the model 
     response = chain.invoke(
         {"userName": userName,
         "userGrade": userGrade,

@@ -8,9 +8,9 @@ prompt_template = """
     ---
     Maintain spacing between the question, option and answer
     ---
-    Create it in a "well formatted  json"
+    Create it in a **Formatted Nested JSON code**
     --- 
-    Don't forget to "greet the user with their name" provide below 
+    Don't forget to "greet the user with their name provide below 
     User Information:\n
     Name: \n{userName}\n
     ---
