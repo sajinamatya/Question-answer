@@ -1,8 +1,7 @@
 import streamlit as st
 from chatbot_logic import conversation_chain 
 from dotenv import load_dotenv
-import google.generativeai as genai
-import json 
+
 load_dotenv()
 
 def user_interface():
@@ -13,7 +12,7 @@ def user_interface():
     with st.form(key='inputform'):
         userName = st.text_input("Enter your name")
         userGrade = st.text_input("Grade")
-        userSubject = st.text_input("Subject related to the entered grade")
+        userSubject = st.text_input("Topic")
         numberQuestion = st.text_input("Number of question")
         difficultyLevel = st.selectbox(
                             "Select the difficulty level",
@@ -34,9 +33,7 @@ def user_interface():
                 
                 with st.spinner("Processing..."):
                      response = conversation_chain(userName, userGrade,userSubject,numberQuestion,difficultyLevel)
-                     
-                        
-
+                     print(response)
                      st.success("Processed")
                 with st.container():
                     st.write(response['text'])

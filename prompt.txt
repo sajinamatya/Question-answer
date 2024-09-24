@@ -1,8 +1,6 @@
-prompt_template = """
-    Generate a "Quiz with four option per question with the correct answer" based detail given below.\n\n
+""" Generate a "Quiz with four option per question with the correct answer for math subject only" based on detail given below.\n\n
     Grade:\n {userGrade}\n
-    Subject:\n {userSubject}\n
-    Topic:\n {userGrade}\n
+    Topic:\n {userSubject}\n
     Dificulity level : \n{difficultyLevel}\n
     Number of question to generate: \n{numberQuestion}\n
     ---
@@ -10,6 +8,7 @@ prompt_template = """
     ---
     Create it in a **Formatted Nested JSON code**
     --- 
+    If the **Topic is out of subject then remind the user to enter only math topic **
     Don't forget to "greet the user with their name provide below 
     User Information:\n
     Name: \n{userName}\n
