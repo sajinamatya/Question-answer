@@ -54,12 +54,14 @@ def input_detail(name,grade,subject,numberqn,difficultylevel):
 
 
 def name_validation(name):
+    """ Validate if the user entered name is validate or not  """
     if name.replace(" ","").isalpha(): 
         return True
     else :
         False
 
 def is_empty(name,grade,subject,numberqn,difficultylevel):
+    """ Check if the user input is empty or not """
     if not name or not grade or not subject or not numberqn or not difficultylevel:
         return True
     else:
