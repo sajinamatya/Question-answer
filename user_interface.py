@@ -6,7 +6,7 @@ load_dotenv()
 
 def user_interface():
 
-    st.title("Quiz Generator Chatbot")
+    st.title("Math Quiz Generator Chatbot")
     st.info("Generate a quiz question with 4 option and correct answer")
 
     with st.form(key='inputform'):
@@ -36,7 +36,7 @@ def user_interface():
                      print(response)
                      st.success("Processed")
                 with st.container():
-                    st.write(response['text'])
+                    st.code(response['text'])
                     
                     
             else:
