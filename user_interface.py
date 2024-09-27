@@ -1,7 +1,7 @@
 import streamlit as st
 from chatbot_logic import conversation_chain 
 from dotenv import load_dotenv
-
+import json
 load_dotenv()
 
 def user_interface():
@@ -36,7 +36,14 @@ def user_interface():
                      print(response)
                      st.success("Processed")
                 with st.container():
-                    st.code(response['text'])
+                    try:
+                        
+                        parsed_json = json.loads(response['text'])
+                        st.json(parsed_json)  
+                    except json.JSONDecodeError:
+                      
+                        st.write(response['text'])
+
                     
                     
             else:
