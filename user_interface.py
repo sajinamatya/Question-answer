@@ -48,6 +48,7 @@ def user_interface():
                     
             else:
                 st.error("Error while process, please check the input")
+                
 
 def input_detail(name,grade,subject,numberqn,difficultylevel):
     with st.container():
@@ -56,9 +57,6 @@ def input_detail(name,grade,subject,numberqn,difficultylevel):
         st.write("subject : " + subject)
         st.write("Number of question : "+ numberqn)
         st.write("Difficulty level : " + difficultylevel)
-
-
-
 
 def name_validation(name):
     """ Validate if the user entered name is validate or not  """
